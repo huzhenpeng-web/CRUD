@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./static/boostrap/css/bootstrap.css" rel="stylesheet">
+    <script src="./static/boostrap/js/bootstrap.js"></script>
+    <script src="jQuery3.6.0.js"></script>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+    $(function () {
+        $('#btn').on('click', function () {
+            $.ajax({
+                method: 'get',
+                url: 'customer/findAllCustomer.action',
+                async: true,
+                success: function (res) {
+                    console.log(res)
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
